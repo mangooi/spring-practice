@@ -3,6 +3,7 @@ package com.mangooi.soundsystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
@@ -17,15 +18,17 @@ public class CDPlayerConfig {
 	CompactDisc cd;
 	
 	@Bean
+	@Primary
 	public CompactDisc sgtPeppers() {
 		return new SgtPeppers();
 	}
 	@Bean
+	@Conditional(ConditionTest.class)
 	public MediaPlayer CDPlayer() {
 		return new CDPlayer(cd);
 	}
 	@Bean
-	@Primary
+	//@Primary
 	public CompactDisc CD() {
 		return new CD();
 	}

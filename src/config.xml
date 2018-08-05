@@ -5,4 +5,6 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<bean id = "compactDisc" class = "com.mangooi.soundsystem.SgtPeppers"/>
+	
+	<bean id = "cd" class = "com.mangooi.soundsystem.CD"/>
 </beans>
