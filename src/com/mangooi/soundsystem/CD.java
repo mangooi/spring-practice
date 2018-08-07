@@ -2,7 +2,7 @@ package com.mangooi.soundsystem;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class CD implements CompactDisc {
 
 	@Override
